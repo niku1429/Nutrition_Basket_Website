@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard | Nutrition Basket</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dash-body">
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🥗 Nutrition Basket</div>
+  <div class="nav-links">
+    <span class="user-name">Welcome {{ user }}</span>
+    <a href="/logout">Logout</a>
+  </div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="dash-hero">
+  <div class="dash-overlay-card">
+    <h1>Explore Nutrition Details</h1>
+    <p>Discover calories, vitamins & health benefits of fresh fruits and vegetables</p>
+
+ <div class="dash-actions">
+  <a href="/fruits" class="action-btn active">🍎 <span>View Fruits</span></a>
+  <a href="/vegetables" class="action-btn active">🥕 <span>View Vegetables</span></a>
+  <a href="/nuts" class="action-btn active">🥜 <span>View Nuts</span></a>
+  <a href="/diet" class="action-btn active">🥗 <span>Diet Planner</span></a>
+  <a href="/bmi" class="action-btn active">📊 <span>BMI Calculator</span></a>
+</div>
+
+  </div>
+</section>
+
+</body>
+</html>

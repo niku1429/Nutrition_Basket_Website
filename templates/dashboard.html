@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="dashboard-hero">
+  <div>
+    <p class="eyebrow">Hello, {{ session.get('user_name') }}</p>
+    <h1>Your nutrition dashboard</h1>
+    <p>Track food nutrition, plan meals, calculate BMI, and shop fresh essentials.</p>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="stats-grid">
+    <div class="stat-card"><strong>{{ counts.get('Fruit', 0) }}</strong><span>Fruits</span></div>
+    <div class="stat-card"><strong>{{ counts.get('Vegetable', 0) }}</strong><span>Vegetables</span></div>
+    <div class="stat-card"><strong>{{ counts.get('Nut', 0) }}</strong><span>Nuts</span></div>
+  </div>
+  <div class="card-grid">
+    <a class="quick-card" href="{{ url_for('fruits') }}"><h3>Fresh Fruits</h3><p>Vitamins, fiber, antioxidants.</p></a>
+    <a class="quick-card" href="{{ url_for('vegetables') }}"><h3>Vegetables</h3><p>Low calorie, nutrient-rich choices.</p></a>
+    <a class="quick-card" href="{{ url_for('nuts') }}"><h3>Healthy Nuts</h3><p>Protein, minerals, and healthy fats.</p></a>
+    <a class="quick-card accent" href="{{ url_for('bmi') }}"><h3>BMI Calculator</h3><p>Check your BMI and suggestions.</p></a>
+    <a class="quick-card accent" href="{{ url_for('diet') }}"><h3>Diet Planner</h3><p>Pick a goal-based food plan.</p></a>
+    <a class="quick-card" href="{{ url_for('cart') }}"><h3>Shopping Cart</h3><p>Review your selected items.</p></a>
+  </div>
+</section>
+{% endblock %}

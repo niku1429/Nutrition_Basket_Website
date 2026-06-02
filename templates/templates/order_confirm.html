@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Confirmed | Nutrition Basket</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🥗 Nutrition Basket</div>
+  <a href="/dashboard">Home</a>
+</div>
+
+<!-- CONFIRM CARD -->
+<div class="confirm-wrapper">
+  <div class="confirm-card">
+
+    <div class="check-icon">✔</div>
+    <h2>Order Confirmed</h2>
+
+    <div class="order-items">
+      {% for i in items %}
+        <div class="item-row">
+          <span>{{ i.name }} × {{ i.qty }}</span>
+          <span>₹ {{ i.subtotal }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <hr>
+
+    <div class="summary">
+      <p><strong>Total Amount:</strong> ₹ {{ total }}</p>
+      <p><strong>Payment Method:</strong> {{ payment }}</p>
+      <p>
+        <strong>Payment Status:</strong>
+        <span class="paid">{{ payment_status }}</span>
+      </p>
+    </div>
+
+    <p class="success-msg">
+      🎉 Your order has been placed successfully!
+    </p>
+
+    <div class="action-btns">
+      <a href="/cancel-order" class="cancel-btn">Cancel Order</a>
+      <a href="/dashboard" class="shop-btn">Continue Shopping</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }} | Nutrition Basket</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">🥗 Nutrition Basket</div>
+  <a href="/dashboard">Back</a>
+</div>
+
+<h2 class="page-title">{{ title }}</h2>
+
+<div class="item-grid">
+  {% for i in items %}
+  <div class="item-card">
+
+    <img src="/{{ i[6] if i[6] else 'static/images/default.jpg' }}"
+         class="item-img">
+
+    <h3>{{ i[1] }}</h3>
+    <p>{{ i[4] }}</p>
+
+    <p class="price">
+  ₹ {{ i[7] if i[7] else "Price Not Available" }}
+
+  {% if i[7] %}
+    {% if i[1] in ['Papaya', 'Pineapple', 'Coconut'] %}
+      / Piece
+    {% elif i[1] in ['Strawberry'] %}
+      / Box
+    {% elif i[1] in ['Spinach', 'Coriander'] %}
+      / Bunch
+    {% else %}
+      / KG
+    {% endif %}
+  {% endif %}
+</p>
+
+
+    <a href="/item/{{ i[0] }}" class="view-btn">View Benefits</a>
+    <a href="/add-to-cart/{{ i[0] }}" class="add-btn">🛒 Add</a>
+
+
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Nutrition Basket | Fresh Healthy Food{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">Fresh fruits, vegetables and nuts</p>
+    <h1>Build a healthier plate with Nutrition Basket.</h1>
+    <p class="hero-copy">Explore nutrition facts, calculate BMI, plan a diet, and shop wholesome foods from one polished dashboard.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('register') }}">Create Account</a>
+      <a class="btn secondary" href="{{ url_for('login') }}">Login</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Features</p>
+    <h2>Everything for daily nutrition decisions</h2>
+  </div>
+  <div class="card-grid four">
+    <article class="info-card">
+      <span class="card-icon">F</span>
+      <h3>Food Catalog</h3>
+      <p>Browse fruits, vegetables, and nuts with calories, vitamins, benefits, and prices.</p>
+    </article>
+    <article class="info-card">
+      <span class="card-icon">B</span>
+      <h3>BMI Calculator</h3>
+      <p>Calculate BMI instantly and receive clear category-based suggestions.</p>
+    </article>
+    <article class="info-card">
+      <span class="card-icon">D</span>
+      <h3>Diet Planner</h3>
+      <p>Choose weight loss, balanced, weight gain, or energy boost meal plans.</p>
+    </article>
+    <article class="info-card">
+      <span class="card-icon">C</span>
+      <h3>Smart Cart</h3>
+      <p>Add items, update quantities, checkout, and confirm payment smoothly.</p>
+    </article>
+  </div>
+</section>
+
+<section class="benefits">
+  <div>
+    <p class="eyebrow">Benefits</p>
+    <h2>Designed for healthy choices that feel easy.</h2>
+  </div>
+  <div class="benefit-list">
+    <p>High-fiber fruits for better digestion and natural energy.</p>
+    <p>Colorful vegetables for immunity, hydration, and balanced meals.</p>
+    <p>Nuts for protein, healthy fats, minerals, and satisfying snacks.</p>
+  </div>
+</section>
+{% endblock %}

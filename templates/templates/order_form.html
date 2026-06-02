@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Place Order | Nutrition Basket</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">🥗 Nutrition Basket</div>
+  <a href="/dashboard">Home</a>
+</div>
+
+<div class="form-card">
+  <h2>🛒 Order Details</h2>
+
+  <!-- CART ITEMS -->
+  <div class="order-items">
+    <h3>Items in Your Cart</h3>
+    <ul>
+      {% for i in items %}
+        <li>
+          {{ i.name }} × {{ i.qty }}
+          <span style="float:right;">₹ {{ i.subtotal }}</span>
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    <h3 class="total">Total Amount: ₹ {{ total }}</h3>
+  </div>
+
+  <form method="post">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <textarea name="address" placeholder="Delivery Address" required></textarea>
+
+    <input type="text" name="pincode" placeholder="Pin Code" required>
+
+    <input type="text" name="mobile" placeholder="Mobile Number" required>
+
+    <label>Payment Method</label>
+    <select name="payment" id="payment" required onchange="showQR()">
+      <option value="">-- Select Payment --</option>
+      <option value="Cash on Delivery">Cash on Delivery</option>
+      <option value="UPI">UPI / QR Code</option>
+    </select>
+
+    <!-- QR SECTION (ONLY HERE) -->
+    <div id="qr-box" style="display:none; text-align:center; margin-top:15px;">
+      <p><strong>Scan QR to Pay</strong></p>
+      <img src="/static/images/qr.png" alt="QR Code" width="170">
+      <p style="font-size:13px;color:#555;">Pay using any UPI app</p>
+    </div>
+
+    <button type="submit" class="order-btn">Place Order</button>
+
+  </form>
+</div>
+
+<script>
+function showQR() {
+  const payment = document.getElementById("payment").value;
+  const qrBox = document.getElementById("qr-box");
+
+  if (payment === "UPI") {
+    qrBox.style.display = "block";
+  } else {
+    qrBox.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
+

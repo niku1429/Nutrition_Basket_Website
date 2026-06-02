@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}BMI Calculator | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="tool-layout">
+  <div class="tool-card">
+    <p class="eyebrow">BMI Calculator</p>
+    <h1>Know your category</h1>
+    <form method="post" class="form">
+      <label>Weight (kg)
+        <input type="number" name="weight" min="1" step="0.1" required>
+      </label>
+      <label>Height (cm)
+        <input type="number" name="height" min="1" step="0.1" required>
+      </label>
+      <button class="btn primary full" type="submit">Calculate BMI</button>
+    </form>
+  </div>
+  <div class="result-card">
+    {% if result %}
+      <span class="tag">{{ result.category }}</span>
+      <h2>Your BMI is {{ result.bmi }}</h2>
+      <p>{{ result.suggestion }}</p>
+    {% else %}
+      <h2>Healthy insight appears here</h2>
+      <p>Enter your height and weight to see your BMI category and nutrition suggestion.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="form-card">
+  <h2>Delivery Details</h2>
+
+  <form method="post">
+    <input type="text" placeholder="Full Name" required>
+    <textarea placeholder="Address" required></textarea>
+    <input type="text" placeholder="Pin Code" required>
+    <input type="text" placeholder="Mobile Number" required>
+
+    <select name="payment" required>
+        <option value="Cash on Delivery">Cash on Delivery</option>
+        <option value="UPI / QR">UPI / QR</option>    
+    </select>
+
+    <button class="order-btn">Place Order</button>
+  </form>
+</div>
+
+</body>
+</html>

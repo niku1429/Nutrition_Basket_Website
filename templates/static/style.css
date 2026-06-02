@@ -1,0 +1,715 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4fdf4;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2e8b57, #3cb371);
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-btn {
+  padding: 6px 14px;
+  background: white;
+  color: #2e8b57 !important;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* HERO */
+/* DASHBOARD BACKGROUND */
+.dash-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* HERO IMAGE */
+.dash-hero {
+  height: calc(100vh - 70px);
+  background: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("https://previews.123rf.com/images/alexraths/alexraths1807/alexraths180700038/105099394-balanced-diet-food-background-organic-food-for-healthy-nutrition-superfoods-meat-fish-legumes.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GLASS CARD */
+.dash-overlay-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 45px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  max-width: 520px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.dash-overlay-card h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.dash-overlay-card p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+} 
+
+/* BUTTONS */
+.dash-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dash-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.dash-btn.primary {
+  background: #237a49;
+  color: white;
+}
+
+.dash-btn.primary:hover {
+  background: white;
+  color: #237a49;
+}
+
+.dash-btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: #2e8b57;
+}
+
+.dash-btn.secondary:hover {
+  background: white;
+  color: #2e8b57;
+}
+
+
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: -80px auto 80px;
+  max-width: 1100px;
+}
+
+.feature-card {
+  background: white;
+  width: 280px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e8b57;
+  color: white;
+}
+
+
+/* AUTH PAGES */
+.auth-body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2e8b57, #6ddf9c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  background: white;
+  width: 360px;
+  padding: 35px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.auth-card h2 {
+  margin-bottom: 10px;
+  color: #158f4a;
+}
+
+.auth-card p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #2e8b57;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #2e8b57;
+  color: white;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  background: #256f47;
+}
+
+.auth-link {
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.auth-link a {
+  color: #2e8b57;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* HOME HERO */
+.home-hero {
+  height: 75vh;
+  background: linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("https://media.sciencephoto.com/h1/10/32/95/h1103295-800px-wm.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-hero-content {
+  max-width: 700px;
+  padding: 20px;
+  color: white;
+}
+
+.home-hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.home-hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.home-cta {
+  display: inline-block;
+  padding: 14px 34px;
+  background: #3cb371;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.home-cta:hover {
+  background: white;
+  color: #2e8b57;
+}
+
+/* FEATURES */
+.home-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: -80px auto 80px;
+  max-width: 1100px;
+}
+
+.feature-card {
+  background: white;
+  width: 280px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+.footer {
+  background: #2e8b57;
+  color: white;
+  text-align: center;
+  padding: 18px;
+}
+
+.page-title {
+  text-align: center;
+  margin: 30px 0;
+  color: #2e8b57;
+}
+
+.item-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.item-card {
+  background: white;
+  width: 230px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.view-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 16px;
+  background: #2e8b57;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.detail-card {
+  max-width: 500px;
+  margin: 60px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/*image icon */
+.item-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+input[type=number] {
+  width: 80%;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ACTION BUTTONS FIX */
+.dash-actions {
+  display: flex; flex-direction: column; align-items: center;
+  flex-wrap: wrap; 
+  gap: 18px;
+  
+  margin-top: 30px;
+}
+
+.action-btn {
+  display: flex;  width: 220px;             /* ✅ same width */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 160px;
+  height: 55px;
+
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+
+
+  color: white;
+  border: 2px solid rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+
+  transition: all 0.3s ease;
+}
+
+.action-btn span {
+  white-space: nowrap;
+  
+
+}
+
+/* Active / Highlighted button */
+.action-btn.active {
+  background: #0b9248;
+  border-color: black;
+  color: white;
+}
+
+/* Hover effect */
+.action-btn:hover {
+  background: white;
+  color: #2e8b57;
+  transform: translateY(-4px);
+}
+
+.price {
+  font-weight: bold;
+  color: #2e8b57;
+  margin: 8px 0;
+}
+
+.order-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background: #ff7a00;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.order-btn:hover {
+  background: #e66900;
+}
+
+
+.form-card, .confirm-card {
+  width: 350px;
+  margin: 60px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-card h2,
+.confirm-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.success-text {
+  text-align: center;
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+
+#qr-box img {
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.status {
+  font-weight: bold;
+  color:  rgb(0, 102, 255);
+}
+
+.status:contains("Pending") {
+  color: orange;
+}
+
+.add-btn {
+  display: inline-block;
+  background: orange;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 10px; 
+}
+
+
+/* CART PAGE */
+.cart-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+.cart-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cart-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.cart-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ITEMS */
+.cart-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.item-price {
+  font-weight: 600;
+}
+
+/* QUANTITY */
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-control a {
+  background: #f1f1f1;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.qty-control span {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* REMOVE */
+.remove-icon {
+  color: red;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* TOTAL */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* ACTION */
+.cart-action {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.place-order-btn {
+  background: #ff7a00;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* EMPTY CART */
+.empty-cart {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.shop-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #2e8b57;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+
+/* ORDER CONFIRM PAGE */
+.confirm-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.confirm-card {
+  background: #fff;
+  width: 420px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.check-icon {
+  font-size: 36px;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.order-items {
+  margin: 20px 0;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.summary p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.paid {
+  color: #189635;
+  font-weight: bold;
+}
+
+.success-msg {
+  color: #28a745;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* SAME BASE STYLE */
+.cancel-btn,
+.shop-btn {
+  width: 180px;          /* 🔥 SAME WIDTH */
+  text-align: center;
+  padding: 12px 0;       /* 🔥 SAME HEIGHT */
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+/* COLORS */
+.cancel-btn {
+  background: #f44336;
+}
+
+.shop-btn {
+  background: #2e8b57;
+}

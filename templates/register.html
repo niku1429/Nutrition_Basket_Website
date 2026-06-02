@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Register | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="auth-shell">
+  <div class="auth-card">
+    <p class="eyebrow">Start fresh</p>
+    <h1>Create your account</h1>
+    <form method="post" class="form">
+      <label>Full Name
+        <input type="text" name="name" placeholder="Your name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </label>
+      <label>Password
+        <input type="password" name="password" placeholder="Minimum 6 characters" minlength="6" required>
+      </label>
+      <button class="btn primary full" type="submit">Register</button>
+    </form>
+    <p class="muted">Already registered? <a href="{{ url_for('login') }}">Login</a></p>
+  </div>
+</section>
+{% endblock %}

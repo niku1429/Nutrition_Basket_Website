@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Cart | Nutrition Basket</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🥗 Nutrition Basket</div>
+  <a href="/dashboard">Home</a>
+</div>
+
+<!-- CART WRAPPER -->
+<div class="cart-wrapper">
+
+  <h2 class="cart-title">🛒 My Cart</h2>
+
+  {% if items %}
+  <div class="cart-box">
+
+    <!-- HEADER -->
+    <div class="cart-header">
+      <span>Item</span>
+      <span>Quantity</span>
+      <span>Price</span>
+      <span>Remove</span>
+    </div>
+
+    {% for i in items %}
+    <div class="cart-item">
+      <span class="item-name">{{ i[1] }}</span>
+
+      <div class="qty-control">
+        <a href="/update-qty/{{ i[0] }}/dec">−</a>
+        <span>{{ i[3] }}</span>
+        <a href="/update-qty/{{ i[0] }}/inc">+</a>
+      </div>
+
+      <span class="item-price">₹ {{ i[4] }}</span>
+
+      <a href="/remove/{{ i[0] }}" class="remove-icon">✖</a>
+    </div>
+    {% endfor %}
+
+    <!-- TOTAL -->
+    <div class="cart-total">
+      <span>Total Amount</span>
+      <span>₹ {{ total }}</span>
+    </div>
+
+    <!-- ACTION -->
+    <div class="cart-action">
+      <a href="/checkout" class="place-order-btn">Place Order</a>
+    </div>
+
+  </div>
+
+  {% else %}
+  <div class="empty-cart">
+    <p>🛒 Your cart is empty</p>
+    <a href="/dashboard" class="shop-btn">Continue Shopping</a>
+  </div>
+  {% endif %}
+
+</div>
+
+</body>
+</html>

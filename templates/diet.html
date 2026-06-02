@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Diet Planner | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">Diet recommendation system</p>
+  <h1>Choose a diet goal</h1>
+  <p>Professional diet cards built around fruits, vegetables, and nuts.</p>
+</section>
+
+<section class="section compact">
+  <form method="post" class="goal-tabs">
+    {% for key, diet_plan in plans.items() %}
+      <button class="goal-tab {% if selected == key %}active{% endif %}" name="goal" value="{{ key }}" type="submit">{{ diet_plan.title }}</button>
+    {% endfor %}
+  </form>
+  <article class="diet-card">
+    <p class="eyebrow">{{ plan.title }}</p>
+    <h2>{{ plan.subtitle }}</h2>
+    <div class="meal-grid">
+      {% for meal in plan.meals %}
+        <div class="meal-item">{{ meal }}</div>
+      {% endfor %}
+    </div>
+  </article>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Checkout | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="checkout-layout">
+  <div class="checkout-card">
+    <p class="eyebrow">Checkout</p>
+    <h1>Delivery and payment</h1>
+    <form method="post" class="form">
+      <label>Name
+        <input type="text" name="name" value="{{ session.get('user_name', '') }}" required>
+      </label>
+      <label>Mobile
+        <input type="tel" name="mobile" placeholder="10-digit mobile number" required>
+      </label>
+      <label>Address
+        <textarea name="address" rows="4" placeholder="Delivery address" required></textarea>
+      </label>
+      <label>Payment Option
+        <select name="payment" required>
+          <option value="">Select payment</option>
+          <option value="UPI">UPI</option>
+          <option value="Card">Card</option>
+          <option value="COD">Cash on Delivery</option>
+        </select>
+      </label>
+      <button class="btn primary full" type="submit">Place Order</button>
+    </form>
+  </div>
+  <aside class="summary-card">
+    <h2>Order summary</h2>
+    {% for row in items %}
+      <div class="summary-row"><span>{{ row.item.name }} x {{ row.qty }}</span><strong>Rs. {{ "%.0f"|format(row.subtotal) }}</strong></div>
+    {% endfor %}
+    <div class="summary-total"><span>Total</span><strong>Rs. {{ "%.0f"|format(total) }}</strong></div>
+  </aside>
+</section>
+{% endblock %}

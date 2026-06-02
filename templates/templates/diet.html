@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diet Planner</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">🥗 Nutrition Basket</div>
+  <a href="/dashboard">Back</a>
+</div>
+
+<div class="detail-card">
+  <h2>Select Your Goal</h2>
+
+  <form method="post">
+    <select name="goal" required>
+      <option value="">-- Choose Goal --</option>
+      <option value="weight_loss">Weight Loss</option>
+      <option value="balanced">Balanced Health</option>
+      <option value="energy">Energy / Muscle Gain</option>
+    </select>
+    <br><br>
+    <button type="submit" class="dash-btn primary">Show Diet Plan</button>
+  </form>
+
+  {% if plan %}
+    <hr>
+    <h3>{{ plan.title }}</h3>
+    <ul>
+      {% for item in plan.details %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+</body>
+</html>

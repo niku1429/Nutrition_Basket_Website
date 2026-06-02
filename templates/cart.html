@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Cart | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">Shopping</p>
+  <h1>Your cart</h1>
+</section>
+
+<section class="section compact">
+  {% if items %}
+    <div class="cart-table">
+      {% for row in items %}
+        <div class="cart-row">
+          <img src="{{ url_for('static', filename='images/' ~ row.item.image) }}" alt="{{ row.item.name }}">
+          <div><strong>{{ row.item.name }}</strong><span>Rs. {{ "%.0f"|format(row.item.price) }} each</span></div>
+          <div class="qty-control">
+            <a href="{{ url_for('update_qty', item_id=row.item.id, action='dec') }}">-</a>
+            <span>{{ row.qty }}</span>
+            <a href="{{ url_for('update_qty', item_id=row.item.id, action='inc') }}">+</a>
+          </div>
+          <strong>Rs. {{ "%.0f"|format(row.subtotal) }}</strong>
+          <a class="remove-link" href="{{ url_for('remove_item', item_id=row.item.id) }}">Remove</a>
+        </div>
+      {% endfor %}
+      <div class="cart-total"><span>Total</span><strong>Rs. {{ "%.0f"|format(total) }}</strong></div>
+      <div class="cart-actions">
+        <a class="btn secondary" href="{{ url_for('items') }}">Continue Shopping</a>
+        <a class="btn primary" href="{{ url_for('checkout') }}">Checkout</a>
+      </div>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <h2>Your cart is empty</h2>
+      <p>Add fruits, vegetables, and nuts from the catalog.</p>
+      <a class="btn primary" href="{{ url_for('items') }}">Start Shopping</a>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

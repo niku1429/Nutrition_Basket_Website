@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ item.name }} | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="detail-layout">
+  <img class="detail-image" src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="{{ item.name }}">
+  <div class="detail-panel">
+    <span class="tag">{{ item.type }}</span>
+    <h1>{{ item.name }}</h1>
+    <p>{{ item.benefits }}</p>
+    <div class="nutrition-list">
+      <div><strong>Calories</strong><span>{{ item.calories }} kcal per 100g</span></div>
+      <div><strong>Vitamins</strong><span>{{ item.vitamins }}</span></div>
+      <div><strong>Price</strong><span>Rs. {{ "%.0f"|format(item.price) }}</span></div>
+    </div>
+    <div class="hero-actions left">
+      <a class="btn primary" href="{{ url_for('add_to_cart', item_id=item.id) }}">Add to Cart</a>
+      <a class="btn secondary" href="{{ url_for('items') }}">Back to Catalog</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

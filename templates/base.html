@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Nutrition Basket{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="{{ url_for('home') }}">
+      <span class="brand-mark">NB</span>
+      <span>Nutrition Basket</span>
+    </a>
+    <input id="nav-toggle" class="nav-toggle" type="checkbox">
+    <label class="nav-menu-btn" for="nav-toggle">Menu</label>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      {% if session.get('user_id') %}
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('fruits') }}">Fruits</a>
+        <a href="{{ url_for('vegetables') }}">Vegetables</a>
+        <a href="{{ url_for('nuts') }}">Nuts</a>
+        <a href="{{ url_for('cart') }}">Cart{% if cart_count %} ({{ cart_count }}){% endif %}</a>
+        <a class="nav-pill" href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        <a class="nav-pill" href="{{ url_for('register') }}">Register</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-wrap">
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Nutrition Basket</strong>
+      <p>Fresh foods, practical wellness, and simple shopping in one healthy place.</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ url_for('diet') if session.get('user_id') else url_for('login') }}">Diet Planner</a>
+      <a href="{{ url_for('bmi') if session.get('user_id') else url_for('login') }}">BMI Calculator</a>
+      <a href="{{ url_for('items') if session.get('user_id') else url_for('login') }}">Catalog</a>
+    </div>
+  </footer>
+</body>
+</html>

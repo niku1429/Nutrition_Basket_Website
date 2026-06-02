@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Order Confirmed | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="confirm-shell">
+  <div class="confirm-card">
+    <span class="success-badge">Done</span>
+    <h1>Order confirmed</h1>
+    <p>Thank you, {{ order.name }}. Your healthy basket is on its way.</p>
+    <div class="summary-card embedded">
+      {% for row in items %}
+        <div class="summary-row"><span>{{ row.item.name }} x {{ row.qty }}</span><strong>Rs. {{ "%.0f"|format(row.subtotal) }}</strong></div>
+      {% endfor %}
+      <div class="summary-total"><span>Total</span><strong>Rs. {{ "%.0f"|format(total) }}</strong></div>
+      <div class="summary-row"><span>Payment</span><strong>{{ order.payment }}</strong></div>
+      <div class="summary-row"><span>Status</span><strong>{{ order.payment_status }}</strong></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a class="btn secondary" href="{{ url_for('items') }}">Shop More</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

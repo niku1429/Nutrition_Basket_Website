@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Login | Nutrition Basket{% endblock %}
+{% block content %}
+<section class="auth-shell">
+  <div class="auth-card">
+    <p class="eyebrow">Welcome back</p>
+    <h1>Login to your basket</h1>
+    <form method="post" class="form">
+      <label>Email
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </label>
+      <label>Password
+        <input type="password" name="password" placeholder="Enter password" required>
+      </label>
+      <button class="btn primary full" type="submit">Login</button>
+    </form>
+    <p class="muted">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+  </div>
+</section>
+{% endblock %}
